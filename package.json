@@ -1,0 +1,24 @@
+{
+  "name": "geotiff-reprojection",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "reproject": "node reproject.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "geotiff": "^3.0.0",
+    "pngjs": "^7.0.0",
+    "proj4": "^2.20.2",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
