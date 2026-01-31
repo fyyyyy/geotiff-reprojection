@@ -7,8 +7,8 @@ const path = require("path");
 // Define projections
 proj4.defs("EPSG:4326", "+proj=longlat +datum=WGS84 +no_defs");
 proj4.defs(
-  "EPSG:32715",
-  "+proj=utm +zone=15 +south +datum=WGS84 +units=m +no_defs",
+  "EPSG:32615",
+  "+proj=utm +zone=15 +datum=WGS84 +units=m +no_defs",
 );
 
 const SOURCE_DIR = "./source";
@@ -43,9 +43,9 @@ async function processGeoTiff(inputPath) {
 
   // Assuming source is EPSG:4326 (common for DEM data like SRTM)
   const srcProj = "EPSG:4326";
-  const dstProj = "EPSG:32715";
+  const dstProj = "EPSG:32615";
 
-  // Transform corner coordinates to UTM 15S
+  // Transform corner coordinates to UTM 15N
   const corners = [
     [minX, minY],
     [maxX, minY],
@@ -54,7 +54,7 @@ async function processGeoTiff(inputPath) {
   ];
 
   const transformedCorners = corners.map((c) => proj4(srcProj, dstProj, c));
-  console.log("Transformed corners (UTM 15S):", transformedCorners);
+  console.log("Transformed corners (UTM 15N):", transformedCorners);
 
   // Calculate new bounds in UTM
   const utmMinX = Math.min(...transformedCorners.map((c) => c[0]));
