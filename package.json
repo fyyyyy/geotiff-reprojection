@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "reproject": "node reproject.js"
+    "reproject": "node reproject.js",
+    "convert": "node convert-to-mesh.js"
   },
   "keywords": [],
   "author": "",
